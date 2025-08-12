@@ -1,11 +1,13 @@
 package PageObject;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import utilities.configReader;
 
@@ -57,6 +59,8 @@ public class loginPage {
 			Properties prop =configReader.getXpathProperties();
 			String logoXpath=prop.getProperty("logo");
 			LogoDisplay=By.xpath(logoXpath);
+			//WebDriverWait wait =new WebDriverWait(myDriver,Duration.ofSeconds(10));
+
 			boolean logo =myDriver.findElement(LogoDisplay).isDisplayed();
 			return logo;
 		}

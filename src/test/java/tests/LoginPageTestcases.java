@@ -1,7 +1,9 @@
 package tests;
 
 import java.io.IOException;
+import java.time.Duration;
 
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -9,7 +11,7 @@ import BaseProject.BaseTest;
 import PageObject.loginPage;
 
 
-public class Testcases extends BaseTest{
+public class LoginPageTestcases extends BaseTest{
 
 	@Test
 	public void tc001() throws IOException{  //LoginPage ::Send correct username and password
@@ -65,24 +67,5 @@ public class Testcases extends BaseTest{
 
 		}	
 	}//method end tc004
-	
-	
-	@Test
-	public  void tc005() throws IOException { //LoginPage ::Logo is display or not.
-		System.out.println("TC004 :: LoginPage ::Logo is display or not.");
-		loginPage logpg =new loginPage(myDriver);
-		if(logpg.LogoDisplay()){
-			System.out.println("Logo is display on Login page");
-		}
-		else {
-			System.out.println("Logo is not display on Login page");
-		}
-		}//method end tc005	
-	
-	
-	
-	
-	
-	
-	
+		
 }
