@@ -1,0 +1,8 @@
+2025-08-19 23:01:47 INFO  BaseProject.BaseTest - ===== STARTED BROWSER ===== 
+2025-08-19 23:01:54 INFO  tests.LoginPageTestcases - =========STARTED :: TC001==============
+2025-08-19 23:01:54 INFO  tests.LoginPageTestcases - Loaded Xpath properties successfully.
+2025-08-19 23:01:54 INFO  tests.LoginPageTestcases - Retrieved password field Xpath: //input[@placeholder='Username']
+2025-08-19 23:01:54 INFO  tests.LoginPageTestcases - Located username field using Xpath.
+2025-08-19 23:01:54 INFO  tests.LoginPageTestcases - username entered successfully.
+2025-08-19 23:01:54 INFO  tests.LoginPageTestcases - =========ENDED :: TC001==============
+2025-08-19 23:01:54 INFO  BaseProject.BaseTest - ===== ENDED BROWSER ===== 

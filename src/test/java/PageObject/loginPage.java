@@ -1,17 +1,19 @@
 package PageObject;
 
 import java.io.IOException;
-import java.time.Duration;
 import java.util.Properties;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
+
+import BaseProject.BaseTest;
+import tests.LoginPageTestcases;
 import utilities.configReader;
 
-public class loginPage {
+public class loginPage extends BaseTest {
 	
 	WebDriver myDriver;
 	private By usernameField;
@@ -19,6 +21,9 @@ public class loginPage {
 	private By loginButtonField;
 	private By InvalidCredentialsMessage;
 	private By LogoDisplay;
+	
+	public Logger logger =LogManager.getLogger(LoginPageTestcases.class);
+
 
 	//Constructor
 	public loginPage(WebDriver myDriver) {
@@ -29,9 +34,13 @@ public class loginPage {
 	//username method
 		public void enterUserName(String username) throws IOException {
 		Properties prop =configReader.getXpathProperties();         //Using prop obje
+		logger.info("Loaded Xpath properties successfully.");
 		String usernameXpath =prop.getProperty("username");        // one varible store prop value.
+	    logger.info("Retrieved password field Xpath: " + usernameXpath);
 		usernameField=By.xpath(usernameXpath);                    //use that value creating xpath value. variable =by.xpath(value)
+	    logger.info("Located username field using Xpath.");
 		myDriver.findElement(usernameField).sendKeys(username);  // mydriver.findelement(xpath value).sendkeys(by user in test001)
+	    logger.info("username entered successfully.");
 	}
 	//password method
 		public void enterPassword(String password) throws IOException {
@@ -59,7 +68,6 @@ public class loginPage {
 			Properties prop =configReader.getXpathProperties();
 			String logoXpath=prop.getProperty("logo");
 			LogoDisplay=By.xpath(logoXpath);
-			//WebDriverWait wait =new WebDriverWait(myDriver,Duration.ofSeconds(10));
 
 			boolean logo =myDriver.findElement(LogoDisplay).isDisplayed();
 			return logo;
@@ -82,10 +90,5 @@ public class loginPage {
 		}
 		
 		
-		
-		
-	
-	
-	
 
 }
