@@ -45,16 +45,23 @@ public class loginPage extends BaseTest {
 	//password method
 		public void enterPassword(String password) throws IOException {
 			Properties prop =configReader.getXpathProperties(); 
+			logger.info("Loaded Xpath properties successfully.");
 			String passwordXpath =prop.getProperty("password");
+			logger.info("Retrieved password field Xpath: " + passwordXpath);
 			passwordField=By.xpath(passwordXpath);
+			logger.info("Located password field using Xpath.");
 			myDriver.findElement(passwordField).sendKeys(password);
+			logger.info("Password entered successfully.");
 		}
 	//LoginButton method
 		public void LoginButton() throws IOException {
 			Properties prop =configReader.getXpathProperties(); 
+			logger.info("Loaded loginbuttonXpath properties successfully.");
 			String loginbuttonXpath =prop.getProperty("loginButton");
+			logger.info("Retrieved password field Xpath: " + loginbuttonXpath);
 			loginButtonField=By.xpath(loginbuttonXpath);
 			myDriver.findElement(loginButtonField).click();
+			logger.info("successfully Click on Submit button.");
 		}
 	//InvalidMessageOccurOnLoginPage
 		public boolean InvalidMessage() throws IOException {
